@@ -2,11 +2,8 @@ package com.sparta.springpractice.domain.order;
 
 import com.sparta.springpractice.domain.product.Product;
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.apache.logging.log4j.util.Lazy;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,15 +19,23 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
-
-    private int quantity; // 주문 수량 (이번 과제는 1로 고정된다)
-
+    // 주문 수량
+    private Long quantity;
+    //주문 일자
     private LocalDateTime createDate;
+    //취소 상태
+    private boolean deleted = false;
+    //취소 일자 (soft delete)
+    private LocalDateTime deletedAt;
 
-    public Order(Product product, int quantity, LocalDateTime createDate) {
+    public Order(Product product, Long quantity) {
         this.product = product;
         this.quantity = quantity;
-        this.createDate = createDate;
+        this.createDate = LocalDateTime.now();
     }
 
+    public void softDelete() {
+        this.deleted = true;
+        this.deletedAt = LocalDateTime.now();
+    }
 }

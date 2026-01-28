@@ -1,18 +1,31 @@
 package com.sparta.springpractice.dto;
 
-import com.sparta.springpractice.domain.product.Product;
+import com.querydsl.core.annotations.QueryProjection;
+
+import java.time.LocalDateTime;
 
 public record ProductResponseDTO(
+        Long productId,
         String name,
-        int price,
-        int stock
+        Long price,
+        Long stock,
+        LocalDateTime createdDate
+
 ) {
-    public static ProductResponseDTO from(Product product) {
-        return new ProductResponseDTO(
-                product.getName(),
-                product.getPrice(),
-                product.getStock()
-        );
+    @QueryProjection
+    public ProductResponseDTO(
+            Long productId,
+            String name,
+            Long price,
+            Long stock,
+            LocalDateTime createdDate)
+    {
+        this.productId = productId;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.createdDate = createdDate;
     }
 }
+
 
