@@ -1,13 +1,13 @@
-package com.sparta.springpractice.service;
+package com.sparta.miniProject.service;
 
-import com.sparta.springpractice.domain.order.Order;
-import com.sparta.springpractice.domain.order.OrderQueryRepository;
-import com.sparta.springpractice.domain.order.OrderRepository;
-import com.sparta.springpractice.domain.product.Product;
-import com.sparta.springpractice.domain.product.ProductRepository;
-import com.sparta.springpractice.dto.OrderCreateRequestDTO;
-import com.sparta.springpractice.dto.OrderCreateResponseDTO;
-import com.sparta.springpractice.dto.OrderResponseDTO;
+import com.sparta.miniProject.domain.order.Order;
+import com.sparta.miniProject.domain.order.OrderQueryRepository;
+import com.sparta.miniProject.domain.order.OrderRepository;
+import com.sparta.miniProject.domain.product.Product;
+import com.sparta.miniProject.domain.product.ProductRepository;
+import com.sparta.miniProject.dto.OrderCreateRequestDTO;
+import com.sparta.miniProject.dto.OrderCreateResponseDTO;
+import com.sparta.miniProject.dto.OrderResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +21,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
     private final OrderQueryRepository orderQueryRepository;
+
     //주문 생성
     @Transactional
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO request) {

@@ -1,11 +1,10 @@
-package com.sparta.springpractice.domain.order;
+package com.sparta.miniProject.domain.order;
 
-import com.sparta.springpractice.domain.product.Product;
+import com.sparta.miniProject.domain.product.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

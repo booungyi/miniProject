@@ -1,6 +1,6 @@
-package com.sparta.springpractice.domain.order;
+package com.sparta.miniProject.domain.order;
 
-import com.sparta.springpractice.dto.OrderResponseDTO;
+import com.sparta.miniProject.dto.OrderResponseDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

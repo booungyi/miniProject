@@ -1,10 +1,10 @@
-package com.sparta.springpractice.domain.order;
+package com.sparta.miniProject.domain.order;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.sparta.springpractice.dto.OrderResponseDTO;
-import com.sparta.springpractice.dto.QOrderResponseDTO;
+import com.sparta.miniProject.dto.OrderResponseDTO;
+import com.sparta.miniProject.dto.QOrderResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.support.PageableExecutionUtils;
@@ -13,8 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import static com.sparta.springpractice.domain.order.QOrder.order;
-import static com.sparta.springpractice.domain.product.QProduct.product;
+import static com.sparta.miniProject.domain.order.QOrder.order;
+import static com.sparta.miniProject.domain.product.QProduct.product;
 @Repository
 @RequiredArgsConstructor
 public class OrderQueryRepositoryImpl implements OrderQueryRepository {
@@ -42,7 +42,7 @@ public class OrderQueryRepositoryImpl implements OrderQueryRepository {
                 .fetchOne();
     }
 
-
+    // 주문 목록 조회
     @Override
     public Page<OrderResponseDTO> searchOrders(Pageable pageable) {
         // 1. DTO로 직접 조회 (N+1 문제 원천 차단)

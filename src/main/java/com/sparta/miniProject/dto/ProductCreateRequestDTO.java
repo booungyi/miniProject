@@ -1,7 +1,7 @@
-package com.sparta.springpractice.dto;
+package com.sparta.miniProject.dto;
 
 public record ProductCreateRequestDTO(
-        String name,
+        String productName,
         Long price,
         Long stock
 ) {

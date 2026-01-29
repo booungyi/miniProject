@@ -1,9 +1,9 @@
-package com.sparta.springpractice.controller;
+package com.sparta.miniProject.controller;
 
-import com.sparta.springpractice.dto.OrderCreateRequestDTO;
-import com.sparta.springpractice.dto.OrderCreateResponseDTO;
-import com.sparta.springpractice.dto.OrderResponseDTO;
-import com.sparta.springpractice.service.OrderService;
+import com.sparta.miniProject.dto.OrderCreateRequestDTO;
+import com.sparta.miniProject.dto.OrderCreateResponseDTO;
+import com.sparta.miniProject.dto.OrderResponseDTO;
+import com.sparta.miniProject.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

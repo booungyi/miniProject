@@ -1,12 +1,12 @@
-package com.sparta.springpractice.service;
+package com.sparta.miniProject.service;
 
-import com.sparta.springpractice.domain.product.Product;
-import com.sparta.springpractice.domain.product.ProductQueryRepository;
-import com.sparta.springpractice.domain.product.ProductRepository;
-import com.sparta.springpractice.dto.ProductCreateRequestDTO;
-import com.sparta.springpractice.dto.ProductCreateResponseDTO;
-import com.sparta.springpractice.dto.ProductResponseDTO;
-import com.sparta.springpractice.dto.ProductUpdateRequestDTO;
+import com.sparta.miniProject.domain.product.Product;
+import com.sparta.miniProject.domain.product.ProductQueryRepository;
+import com.sparta.miniProject.domain.product.ProductRepository;
+import com.sparta.miniProject.dto.ProductCreateRequestDTO;
+import com.sparta.miniProject.dto.ProductCreateResponseDTO;
+import com.sparta.miniProject.dto.ProductResponseDTO;
+import com.sparta.miniProject.dto.ProductUpdateRequestDTO;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -25,7 +25,7 @@ public class ProductService {
     @Transactional
     public ProductCreateResponseDTO create(ProductCreateRequestDTO productDto) {
         Product savedProduct = productRepository.save(
-                new Product(productDto.name(), productDto.price(), productDto.stock())
+                new Product(productDto.productName(), productDto.price(), productDto.stock())
         );
         return ProductCreateResponseDTO.from(savedProduct);
     }

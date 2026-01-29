@@ -1,4 +1,4 @@
-package com.sparta.springpractice.dto;
+package com.sparta.miniProject.dto;
 
 public record OrderCreateRequestDTO(
         Long productId,

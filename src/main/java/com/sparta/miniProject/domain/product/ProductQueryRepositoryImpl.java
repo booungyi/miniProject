@@ -1,13 +1,10 @@
-package com.sparta.springpractice.domain.product;
+package com.sparta.miniProject.domain.product;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.sparta.springpractice.domain.order.OrderQueryRepository;
-import com.sparta.springpractice.dto.OrderResponseDTO;
-import com.sparta.springpractice.dto.ProductResponseDTO;
-import com.sparta.springpractice.dto.QOrderResponseDTO;
-import com.sparta.springpractice.dto.QProductResponseDTO;
+import com.sparta.miniProject.dto.ProductResponseDTO;
+import com.sparta.miniProject.dto.QProductResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,8 +13,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static com.sparta.springpractice.domain.order.QOrder.order;
-import static com.sparta.springpractice.domain.product.QProduct.product;
+import static com.sparta.miniProject.domain.order.QOrder.order;
+import static com.sparta.miniProject.domain.product.QProduct.product;
 @Repository
 @RequiredArgsConstructor
 

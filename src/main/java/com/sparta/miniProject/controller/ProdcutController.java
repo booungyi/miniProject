@@ -1,18 +1,19 @@
-package com.sparta.springpractice.controller;
+package com.sparta.miniProject.controller;
 
-import com.sparta.springpractice.dto.ProductCreateRequestDTO;
-import com.sparta.springpractice.dto.ProductCreateResponseDTO;
-import com.sparta.springpractice.dto.ProductResponseDTO;
-import com.sparta.springpractice.dto.ProductUpdateRequestDTO;
-import com.sparta.springpractice.service.ProductService;
+import com.sparta.miniProject.dto.ProductCreateRequestDTO;
+import com.sparta.miniProject.dto.ProductCreateResponseDTO;
+import com.sparta.miniProject.dto.ProductResponseDTO;
+import com.sparta.miniProject.dto.ProductUpdateRequestDTO;
+import com.sparta.miniProject.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/orders")
+@RequestMapping("/products")
 
 public class ProdcutController {
 
@@ -33,7 +34,7 @@ public class ProdcutController {
 
     //상품 목록 조회 페이징
     @GetMapping
-    public Page<ProductResponseDTO> updateProduct(Pageable pageable) {
+    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 20) Pageable pageable) {
         return productService.findAllProducts(pageable);
     }
 
@@ -44,9 +45,9 @@ public class ProdcutController {
         return productService.updateProductById(productId, productDto);
     }
     //상품 삭제
-    @PatchMapping("/{podcutId}")
-    public void deleteProduct(@PathVariable Long podcutId) {
-        productService.deleteProductById(podcutId);
+    @PatchMapping("/delete/{productId}")
+    public void deleteProduct(@PathVariable Long productId) {
+        productService.deleteProductById(productId);
     }
 
 }

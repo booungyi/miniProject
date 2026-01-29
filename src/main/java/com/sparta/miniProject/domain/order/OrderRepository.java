@@ -1,4 +1,4 @@
-package com.sparta.springpractice.domain.order;
+package com.sparta.miniProject.domain.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

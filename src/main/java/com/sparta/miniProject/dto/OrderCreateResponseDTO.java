@@ -1,6 +1,6 @@
-package com.sparta.springpractice.dto;
+package com.sparta.miniProject.dto;
 
-import com.sparta.springpractice.domain.order.Order;
+import com.sparta.miniProject.domain.order.Order;
 
 import java.time.LocalDateTime;
 

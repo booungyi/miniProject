@@ -1,4 +1,4 @@
-package com.sparta.springpractice;
+package com.sparta.miniProject;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

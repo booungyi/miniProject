@@ -1,7 +1,6 @@
-package com.sparta.springpractice.domain.product;
+package com.sparta.miniProject.domain.product;
 
-import com.sparta.springpractice.dto.ProductCreateResponseDTO;
-import com.sparta.springpractice.dto.ProductResponseDTO;
+import com.sparta.miniProject.dto.ProductResponseDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

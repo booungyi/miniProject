@@ -1,6 +1,6 @@
-package com.sparta.springpractice.dto;
+package com.sparta.miniProject.dto;
 
-import com.sparta.springpractice.domain.product.Product;
+import com.sparta.miniProject.domain.product.Product;
 
 public record ProductCreateResponseDTO(
         String name,

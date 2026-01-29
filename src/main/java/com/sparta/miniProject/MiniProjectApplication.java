@@ -1,13 +1,13 @@
-package com.sparta.springpractice;
+package com.sparta.miniProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringPracticeApplication {
+public class MiniProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringPracticeApplication.class, args);
+        SpringApplication.run(MiniProjectApplication.class, args);
     }
 
 }
