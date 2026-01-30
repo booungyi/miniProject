@@ -33,12 +33,15 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.h2database:h2'
+    implementation 'com.h2database:h2'  // ⭐ runtimeOnly가 아닌 implementation
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
     annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
     annotationProcessor "jakarta.annotation:jakarta.annotation-api"
     annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+    testImplementation 'org.apache.groovy:groovy:4.0.16'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind'
 }
 
 tasks.named('test') {

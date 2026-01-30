@@ -1,12 +1,11 @@
 package com.sparta.miniProject.domain.product;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 import java.time.LocalDateTime;
 
@@ -22,9 +21,21 @@ public class Product {
     private Long price;
     private Long stock;
 
+    @Column(nullable = false)
     private boolean deleted = false;
 
+    @CreatedBy
+    @CreationTimestamp
+    @Column(nullable = false)
     private LocalDateTime createdDate;
+
+    public Product(String name, Long price, Long stock, boolean deleted, LocalDateTime createdDate) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.deleted = deleted;
+        this.createdDate = createdDate;
+    }
 
     public Product(String name, Long price, Long stock) {
         this.name = name;

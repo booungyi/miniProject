@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public record OrderResponseDTO(
         Long orderId,
         Long productId,
-        String productName,
+        String name,
         Long quantity,
         LocalDateTime createdDate
 )
@@ -16,13 +16,13 @@ public record OrderResponseDTO(
     public OrderResponseDTO(
             Long orderId,
             Long productId,
-            String productName,
+            String name,
             Long quantity,
             LocalDateTime createdDate)
     {
         this.orderId = orderId;
         this.productId = productId;
-        this.productName = productName;
+        this.name = name;
         this.quantity = quantity;
         this.createdDate = createdDate;
     }

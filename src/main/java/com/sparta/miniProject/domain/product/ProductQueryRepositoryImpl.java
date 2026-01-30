@@ -34,7 +34,8 @@ public class ProductQueryRepositoryImpl implements ProductQueryRepository {
                         product.name,
                         product.price,
                         product.stock,
-                        product.createdDate
+                        product.createdDate,
+                        product.deleted
                 ))
                 .from(product)
                 .where(product.id.eq(productId),
@@ -50,9 +51,9 @@ public class ProductQueryRepositoryImpl implements ProductQueryRepository {
                         product.name,
                         product.price,
                         product.stock,
-                        product.createdDate
+                        product.createdDate,
 
-                )).from(product)
+                        product.deleted)).from(product)
                 .where(notDeleted())// Lazy Loading 무시하고 바로 Join해서 가져옴
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())

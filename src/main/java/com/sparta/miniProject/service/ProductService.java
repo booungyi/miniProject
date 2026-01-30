@@ -25,7 +25,7 @@ public class ProductService {
     @Transactional
     public ProductCreateResponseDTO create(ProductCreateRequestDTO productDto) {
         Product savedProduct = productRepository.save(
-                new Product(productDto.productName(), productDto.price(), productDto.stock())
+                new Product(productDto.name(), productDto.price(), productDto.stock())
         );
         return ProductCreateResponseDTO.from(savedProduct);
     }

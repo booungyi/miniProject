@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/products")
 
-public class ProdcutController {
+public class ProductController {
 
     private final ProductService productService;
 
 
     //상품 생성
     @PostMapping
-    public ProductCreateResponseDTO createProduct(@RequestBody ProductCreateRequestDTO product) {
-        return productService.create(product);
+    public ProductCreateResponseDTO createProduct(
+            @RequestBody ProductCreateRequestDTO request) {
+        return productService.create(request);
     }
 
     //상품 단일 조회
@@ -34,7 +35,7 @@ public class ProdcutController {
 
     //상품 목록 조회 페이징
     @GetMapping
-    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 20) Pageable pageable) {
+    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 2) Pageable pageable) {
         return productService.findAllProducts(pageable);
     }
 

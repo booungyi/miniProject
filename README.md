@@ -4,16 +4,16 @@
 # 1. 목표
 ### 상품과 주문간의 관계를정의하고 기본적인 CRUD 를 구현할수 있어야합니당
 # 2. 변경 이력
-| 날짜         | 변경내용                                                | 비고        |
-|------------|-----------------------------------------------------|-----------|
-| 2026-01-27 | 초안 작성                                               | 
-| 2026-01-28 | CRUD 작성 완료 , 조회 전체 QueryDSL 구현 , 페이징  구현 + 확장성 고려   | 미니 점검지 제출 |
-| 2026-01-29 | README 작성 , 테스트 작성 + 통과 완료 , Docker and CI/CD  구현진행 |  |   
-| 2026-01-30 |                                                     |            |
-| 2026-01-31 |                                                     |
- 2026-02-01 |                                                     |           |
-| 2026-02-02 |                                                     |
-| 2026-02-03 |                                                     | 중간 점검
+| 날짜         | 변경내용                                                         | 비고        |
+|------------|--------------------------------------------------------------|-----------|
+| 2026-01-27 | 초안 작성                                                        | 
+| 2026-01-28 | CRUD 작성 완료 , 조회 전체 QueryDSL 구현 , 페이징  구현 + 확장성 고려            | 미니 점검지 제출 |
+| 2026-01-29 | README 작성 , products 테스트 작성 + 통과 완료 , Docker and CI/CD  구현진행 |  |   
+| 2026-01-30 |                                                              |            |
+| 2026-01-31 |                                                              |
+ 2026-02-01 |                                                              |           |
+| 2026-02-02 |                                                              |
+| 2026-02-03 |                                                              | 중간 점검
 
 # 3. 기능 설계
 | 기능 | 세부 기능                                     | 설명 |       
@@ -45,7 +45,7 @@ LocalDateTime deletedAt     // 주문 취소 날짜
   * URL : GET /orders/{productId}
 ```Json
         {
-          "productName": "productName",
+          "name": "name",
           "price":"..L",
           "stock":"..L"
         }
@@ -54,7 +54,7 @@ LocalDateTime deletedAt     // 주문 취소 날짜
 ```Json
       {
         "productId": 1,
-        "productName": "예시상품",
+        "name": "예시상품",
         "price": 10000,
         "stock": 50,
         "createdAt": "2026-01-29T10:00:00"
@@ -68,7 +68,7 @@ LocalDateTime deletedAt     // 주문 취소 날짜
 ```Json
         {
           "productId": 1,
-          "productName": "예시상품",
+          "name": "예시상품",
           "price": 10000,
           "stock": 50,
           "createdAt": "2026-01-29T10:00:00",
@@ -86,13 +86,13 @@ LocalDateTime deletedAt     // 주문 취소 날짜
   "content": [
     {   
         "productId": 1,
-        "productName": "예시상품1",
+        "name": "예시상품1",
         "price": 10000,
         "stock": 50
     },
     {
         "productId": 2,
-        "productName": "예시상품2",
+        "name": "예시상품2",
         "price": 20000,
         "stock": 30
     }       
@@ -111,7 +111,7 @@ LocalDateTime deletedAt     // 주문 취소 날짜
    * Request Body : ProductUpdateRequestDTO
 ```Json
 {
-  "productName": "수정상품",
+  "name": "수정상품",
   "price": 12000,
   "stock": 40
 }
@@ -121,7 +121,7 @@ LocalDateTime deletedAt     // 주문 취소 날짜
 ```Json
 {
   "productId": 1,
-  "productName": "수정상품",
+  "name": "수정상품",
   "price": 12000,
   "stock": 40,
   "updatedAt": "2026-01-29T13:00:00"
@@ -206,3 +206,4 @@ LocalDateTime deletedAt     // 주문 취소 날짜
 + ### 멤버 or 관리자 페이지 따로 구현
 + ### jwt 토큰
 + ### Front 구현 ㅇㅇ?
++ ### 상품 삭제나 수정은 관리자만 가능한게 맞지않을까??
