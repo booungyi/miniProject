@@ -35,7 +35,7 @@ public class ProductController {
 
     //상품 목록 조회 페이징
     @GetMapping
-    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 2) Pageable pageable) {
+    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 20) Pageable pageable) {
         return productService.findAllProducts(pageable);
     }
 
