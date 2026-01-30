@@ -29,14 +29,6 @@ public class Product {
     @Column(nullable = false)
     private LocalDateTime createdDate;
 
-    public Product(String name, Long price, Long stock, boolean deleted, LocalDateTime createdDate) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.deleted = deleted;
-        this.createdDate = createdDate;
-    }
-
     public Product(String name, Long price, Long stock) {
         this.name = name;
         this.price = price;

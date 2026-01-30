@@ -4,6 +4,8 @@ import com.sparta.miniProject.domain.product.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 import java.time.LocalDateTime;
 
@@ -26,7 +28,12 @@ public class Order {
     //취소 상태
     private boolean deleted = false;
     //취소 일자 (soft delete)
+
+    @CreationTimestamp
+    @CreatedBy
     private LocalDateTime deletedAt;
+    //주문 가격
+    private  Long totalPrice;
 
     public Order(Product product, Long quantity) {
         this.product = product;
@@ -38,4 +45,8 @@ public class Order {
         this.deleted = true;
         this.deletedAt = LocalDateTime.now();
     }
+    public Long thisIsTotalPrice() {
+        return this.totalPrice = this.quantity*product.getPrice();
+    }
+
 }

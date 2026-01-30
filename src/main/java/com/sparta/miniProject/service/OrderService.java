@@ -34,7 +34,7 @@ public class OrderService {
 
         Order order = new Order(product, request.quantity());
         Order savedOrder = orderRepository.save(order);
-
+        savedOrder.thisIsTotalPrice();
         return OrderCreateResponseDTO.from(savedOrder);
     }
 

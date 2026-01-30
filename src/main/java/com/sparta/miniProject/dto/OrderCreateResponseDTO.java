@@ -10,14 +10,16 @@ public record OrderCreateResponseDTO(
         Long productId,
         String productName,
         Long quantity,
-        LocalDateTime createdDate
+        LocalDateTime createdDate,
+        Long totalPrice
 ) {
     public static OrderCreateResponseDTO from (Order order) {
         return new OrderCreateResponseDTO(order.getId(),
                 order.getProduct().getId(),
                 order.getProduct().getName(),
                 order.getQuantity(),
-                order.getCreateDate()
+                order.getCreateDate(),
+                order.getTotalPrice()
         );
     }
 

@@ -32,13 +32,13 @@ public class OrderQueryRepositoryImpl implements OrderQueryRepository {
                         order.product.id,
                         order.product.name,
                         order.quantity,
-                        order.createDate
+                        order.createDate,
+                        order.totalPrice
                 ))
                 .from(order)
                 .join(order.product, product)
                 .where(order.id.eq(orderId),
                         notDeleted())
-//                        order.delete.isFalse)
                 .fetchOne();
     }
 
@@ -53,7 +53,7 @@ public class OrderQueryRepositoryImpl implements OrderQueryRepository {
                         order.product.id,
                         order.product.name, // 상품 이름 바로 가져오기 (Join)
                         order.quantity,
-                        order.createDate))
+                        order.createDate, order.totalPrice))
                 .from(order)
                 .join(order.product, product)
                 .where(notDeleted())// Lazy Loading 무시하고 바로 Join해서 가져옴

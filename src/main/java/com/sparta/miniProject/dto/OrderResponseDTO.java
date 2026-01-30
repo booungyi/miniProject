@@ -10,7 +10,9 @@ public record OrderResponseDTO(
         Long productId,
         String name,
         Long quantity,
-        LocalDateTime createdDate
+        LocalDateTime createdDate,
+        Long totalPrice
+
 )
 { @QueryProjection // QueryDSL Q-Type 생성
     public OrderResponseDTO(
@@ -18,12 +20,15 @@ public record OrderResponseDTO(
             Long productId,
             String name,
             Long quantity,
-            LocalDateTime createdDate)
+            LocalDateTime createdDate,
+            Long totalPrice
+            )
     {
         this.orderId = orderId;
         this.productId = productId;
         this.name = name;
         this.quantity = quantity;
         this.createdDate = createdDate;
+        this.totalPrice = totalPrice;
     }
 }
