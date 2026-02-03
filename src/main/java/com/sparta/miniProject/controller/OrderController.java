@@ -25,18 +25,18 @@ public class OrderController {
 
     //주문 단건 조회
     @GetMapping("/{orderId}")
-    public OrderResponseDTO getOrders(@PathVariable Long orderId) {
+    public OrderResponseDTO getOrder(@PathVariable Long orderId) {
         return orderService.getOrder(orderId);
     }
 
     //주문 목록 조회
     @GetMapping
-    public Page<OrderResponseDTO> getOrderById(@PageableDefault(size = 20) Pageable pageable) {
+    public Page<OrderResponseDTO> getOrders(@PageableDefault(size = 20) Pageable pageable) {
         return orderService.getOrderList(pageable);
     }
 
     //주문 삭제 (softdelete)
-    @PatchMapping("/{orderId}")
+    @DeleteMapping("/{orderId}")
     public void deleteOrderById (@PathVariable Long orderId) {
         orderService.deleteOrderById(orderId);
     }

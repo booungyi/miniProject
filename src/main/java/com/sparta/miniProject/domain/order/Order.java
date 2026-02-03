@@ -45,7 +45,7 @@ public class Order {
         this.deleted = true;
         this.deletedAt = LocalDateTime.now();
     }
-    public Long thisIsTotalPrice() {
+    public Long calculateTotalPrice() {
         return this.totalPrice = this.quantity*product.getPrice();
     }
 

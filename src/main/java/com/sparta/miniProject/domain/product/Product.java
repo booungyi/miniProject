@@ -50,4 +50,7 @@ public class Product {
         this.stock = restStock;
     }
 
+    public void softDelete() {
+        this.deleted = true;
+    }
 }

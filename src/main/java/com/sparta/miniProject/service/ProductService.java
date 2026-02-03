@@ -52,6 +52,7 @@ public class ProductService {
     // 상품 삭제 softDelete
     @Transactional
     public void deleteProductById(Long id) {
-        productRepository.deleteById(id);
+        Product product = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("상품을 찾을수 없습니다."));
+        product.softDelete();
     }
 }

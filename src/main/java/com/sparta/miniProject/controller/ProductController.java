@@ -19,7 +19,6 @@ public class ProductController {
 
     private final ProductService productService;
 
-
     //상품 생성
     @PostMapping
     public ProductCreateResponseDTO createProduct(
@@ -35,20 +34,20 @@ public class ProductController {
 
     //상품 목록 조회 페이징
     @GetMapping
-    public Page<ProductResponseDTO> updateProduct(@PageableDefault(size = 20) Pageable pageable) {
+    public Page<ProductResponseDTO> getProducts(@PageableDefault(size = 20) Pageable pageable) {
         return productService.findAllProducts(pageable);
     }
 
     //상품 수정
     @PatchMapping("/{productId}")
-    public ProductCreateResponseDTO updateProduct(@PathVariable Long productId,
-                                                  @RequestBody ProductUpdateRequestDTO productDto) {
+    public ProductCreateResponseDTO updateProduct(
+            @PathVariable Long productId,
+            @RequestBody ProductUpdateRequestDTO productDto) {
         return productService.updateProductById(productId, productDto);
     }
     //상품 삭제
-    @PatchMapping("/delete/{productId}")
+    @DeleteMapping("/delete/{productId}")
     public void deleteProduct(@PathVariable Long productId) {
         productService.deleteProductById(productId);
     }
-
 }
