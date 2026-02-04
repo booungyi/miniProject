@@ -115,7 +115,7 @@ public class ProductTest {
                     .statusCode(200);
         }
         RestAssured.given().log().all()
-                .when().patch("/products/delete/1")
+                .when().delete("/products/delete/1")
                 .then().log().all().statusCode(200);
     }
 }
